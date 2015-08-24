@@ -1,9 +1,9 @@
 {
-  "name": "code-lab",
+  "name": "express-qs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "supervisor ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -12,7 +12,8 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "supervisor": "^0.7.1"
   },
   "description": "back-end source for one-day-code-lab",
   "main": "app.js",
@@ -29,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/weplanetJT/expressCodeLab/issues"
   },
-  "homepage": "https://github.com/weplanetJT/expressCodeLab#readme"
+  "homepage": "https://github.com/weplanetJT/expressCodeLab#readme",
+  "devDependencies": {}
 }
