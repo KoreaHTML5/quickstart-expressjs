@@ -6,9 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var dbHelper = require('./lib/dbHelper');
 
 var app = express();
 
@@ -24,6 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+// Adding node
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var items = require('./routes/items');
+
 app.use('/', routes);
 app.use('/users', users);
 
@@ -35,7 +40,6 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -57,6 +61,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+dbHelper.connect();
 
 app.listen(app.get('port'), function(){
   console.log('Server listening on port %s in %s mode', app.get('port'), app.get('env'));
