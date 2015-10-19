@@ -27,3 +27,7 @@ benchmarks/graphs
 
 # IDE
 .idea/
+
+dist
+.tmp
+bower_components

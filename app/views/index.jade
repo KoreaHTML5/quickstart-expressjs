@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1= title
+  p
+    | Welcome to 'Quickstart for Express'
+    | https://www.webframeworks.kr
+  img.mainBanner(src="/img/banner.png")
+  form(method="post")
+    .form-group
+      label(for="qsInputEmail") 이메일:
+      input.form-control(type="text", id="qsInputEmail", placeholder="Email")
+    .form-group
+      label(for="qsInputPwd") 비밀번호:
+      input.form-control(type="password", id="qsInputPwd", placeholder="Password")
+    .form-group
+      label(for="qsInputFile") 파일입력:
+      input(type="file", id="qsInputFile")
+      p.help-block 파일확장자는 png,jpg만 가능합니다.
+
+    button.btn.btn-primary(type="submit") 보내기
+
+  br
+
+  .alert.alert-dismissable.alert-warning
+    button.close( type="button", data-dismiss="alert" ) ×
+    | Warning! Warning!
+  .alert.alert-dismissable.alert-danger
+    button.close( type="button", data-dismiss="alert" ) ×
+    | Danger Will Robinson!
+  .alert.alert-dismissable.alert-success
+    button.close( type="button", data-dismiss="alert" ) ×
+    | You succeeded :-)
+  .alert.alert-dismissable.alert-info
+    button.close( type="button", data-dismiss="alert" ) ×
+    | Some information for you
